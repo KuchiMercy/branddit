@@ -29,21 +29,23 @@ export default function ServicesHero() {
             intentional branding, technology, and creative execution.
           </p>
 
-          <div className="flex flex-wrap gap-5 mt-10">
-            <Link href="/contact">
+          <div className="flex flex-col items-center md:items-start md:flex-row justify-center md:justify-start gap-4 mt-10">
+            <Link href="/contact" className="w-full md:w-auto">
               <Button
                 text="Start Your Project"
                 bgColor="bg-[#071C2A]"
                 textColor="text-white"
+                className="w-full"
               />
             </Link>
 
-            <Link href="/contact">
+            <Link href="/contact" className="w-full md:w-auto">
               <Button
                 text="Book a Strategy Call"
                 bgColor="bg-transparent"
                 textColor="text-[#071C2A]"
                 border="border border-[#071C2A]"
+                className="w-full"
               />
             </Link>
           </div>

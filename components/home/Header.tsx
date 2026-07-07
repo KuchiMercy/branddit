@@ -48,7 +48,7 @@ export default function Header() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
+          <div className="flex flex-col items-center md:items-start md:flex-row justify-center md:justify-start gap-4 mt-12">
             <Link href="/contact" className="w-full md:w-auto">
               <Button
                 text="Start Your Project →"
