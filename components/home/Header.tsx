@@ -48,8 +48,8 @@ export default function Header() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col items-center gap-4 mt-12">
-            <Link href="/contact" className="w-full max-w-sm">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
+            <Link href="/contact" className="w-full md:w-auto">
               <Button
                 text="Start Your Project →"
                 bgColor="bg-slate-900"
@@ -58,7 +58,7 @@ export default function Header() {
               />
             </Link>
 
-            <Link href="/case-studies" className="w-full max-w-sm">
+            <Link href="/case-studies" className="w-full md:w-auto">
               <Button
                 text="See Our Work"
                 bgColor="bg-white"
