@@ -91,7 +91,7 @@ export default function Footer() {
               {services.map((service) => (
                 <Link
                   key={service}
-                  href="#"
+                  href="/services"
                   className="text-gray-400 hover:text-white transition"
                 >
                   {service}
@@ -124,7 +124,9 @@ export default function Footer() {
             <div className="space-y-5 text-gray-400">
               <p>brandditcreativestudio@gmail.com</p>
 
-              <p>+234 902 010 3175, +234 704 671 7678</p>
+              <p>
+                +2349023103175 <br /> +2347046717678
+              </p>
             </div>
 
             <div className="mt-10">
@@ -163,7 +165,7 @@ export default function Footer() {
       {/* Bottom Footer */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 text-center text-sm">
             © 2026 Branddit Creative Studio. All rights reserved.
           </p>
 

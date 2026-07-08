@@ -7,7 +7,7 @@ export default function Page() {
       {/* Hero */}
       <section className="bg-[#041926] text-white pt-8 pb-24">
         <Navbar />
-        <div className="max-w-7xl mx-auto pt-10 w-[90%]">
+        <div className="max-w-7xl mx-auto pt-20 w-[90%]">
           <h1 className="text-4xl md:text-5xl font-bold text-center">
             Cookie Policy
           </h1>

@@ -14,7 +14,9 @@ export default function ServicesPage() {
       <ServicesList />
       <StrategicProcess showStats={false} />
       <FAQ />
-      <ContactFormCard />
+      <div id="contact-form">
+        <ContactFormCard />
+      </div>
     </PageLayout>
   );
 }

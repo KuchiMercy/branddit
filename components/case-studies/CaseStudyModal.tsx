@@ -58,12 +58,13 @@ export default function CaseStudyModal({ details, open, onClose }: Props) {
         </button>
 
         {/* Hero image */}
-        <div className="relative aspect-video w-full">
+        <div className="relative aspect-video w-full bg-gray-50">
           <Image
             src={details.image}
             alt={details.title}
             fill
-            className="object-cover"
+            className="object-contain"
+            quality={100}
           />
         </div>
 

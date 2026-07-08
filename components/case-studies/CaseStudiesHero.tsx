@@ -5,7 +5,7 @@ export default function CaseStudiesHero() {
     <section className="bg-[#071C2A] pt-8 pb-24">
       <Navbar />
       <div className="max-w-5xl mx-auto px-6 text-center">
-        <h1 className="text-5xl lg:text-6xl pt-10 font-bold text-white">
+        <h1 className="text-5xl lg:text-6xl pt-20 font-bold text-white ">
           Some of Our Work
         </h1>
 

@@ -141,22 +141,22 @@ export default function BrandGuide() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-8 w-full bg-[#071C2A] hover:bg-[#0d2b3f] transition rounded-full py-5 text-white font-semibold text-xl flex justify-center items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="mt-8 w-full bg-[#071C2A] hover:bg-[#0d2b3f] transition rounded-full py-5 text-white font-semibold text-lg flex justify-center items-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
-                    <Loader2 size={22} className="animate-spin" />
+                    <Loader2 size={20} className="animate-spin" />
                     Preparing Download...
                   </>
                 ) : downloadSuccess ? (
                   <>
-                    <Check size={22} />
+                    <Check size={20} />
                     Downloaded!
                   </>
                 ) : (
                   <>
                     Download Free Guide
-                    <Download size={22} />
+                    <Download size={20} />
                   </>
                 )}
               </button>

@@ -4,7 +4,7 @@ export default function ContactHero() {
   return (
     <section className="bg-[#041926] text-white pt-8 pb-24">
       <Navbar />
-      <div className="max-w-3xl mx-auto text-center pt-10 px-6">
+      <div className="max-w-3xl mx-auto text-center pt-20 px-6">
         <h1 className="text-5xl md:text-6xl font-bold leading-tight">
           Let&apos;s Build Something
           <br />

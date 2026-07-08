@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "../layout/Navbar";
 import Button from "../ui/Button";
 import Link from "next/link";
 import BrandSlide from "./BrandSlide";
+import ContactFormCard from "../ContactFormCard";
 
 export default function Header() {
+  const [showContactModal, setShowContactModal] = useState(false);
+
   return (
     <>
       <header
@@ -14,7 +20,7 @@ export default function Header() {
       >
         <Navbar />
 
-        <section className="max-w-5xl mx-auto text-center mt-16 px-6">
+        <section className="max-w-5xl mx-auto text-center mt-16 pt-16 px-6">
           {/* Trust Badge */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-8">
             <p className="font-semibold text-lg">
@@ -22,12 +28,18 @@ export default function Header() {
             </p>
 
             <div className="flex -space-x-2">
-              {["M", "B", "D", "H", "+20"].map((item) => (
+              {[
+                { label: "M", bg: "bg-purple-500" },
+                { label: "B", bg: "bg-black" },
+                { label: "D", bg: "bg-orange-500" },
+                { label: "H", bg: "bg-green-500" },
+                { label: "+20", bg: "bg-blue-500" },
+              ].map((item) => (
                 <div
-                  key={item}
-                  className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center text-sm border-2 border-white"
+                  key={item.label}
+                  className={`w-10 h-10 rounded-full ${item.bg} text-white flex items-center justify-center text-sm border-2 border-white`}
                 >
-                  {item}
+                  {item.label}
                 </div>
               ))}
             </div>
@@ -49,14 +61,17 @@ export default function Header() {
 
           {/* Buttons */}
           <div className="flex flex-col items-center md:flex-row justify-center  gap-4 mt-12">
-            <Link href="/contact" className="w-full md:w-auto">
+            <button
+              onClick={() => setShowContactModal(true)}
+              className="w-full md:w-auto"
+            >
               <Button
                 text="Start Your Project →"
                 bgColor="bg-slate-900"
                 textColor="text-white"
                 className="w-full"
               />
-            </Link>
+            </button>
 
             <Link href="/case-studies" className="w-full md:w-auto">
               <Button
@@ -71,12 +86,17 @@ export default function Header() {
           {/* Clients Heading */}
           <div className="mt-24 text-center">
             <h2 className="text-3xl pb-6 font-bold">
-              Trusted by <span className="text-primary">30+ Clients</span>
+              Trusted by <span className="text-primary">30+ Clients</span>{" "}
+              Across <span className="text-primary">4 Countries</span>
             </h2>
           </div>
         </section>
       </header>
       <BrandSlide />
+
+      {showContactModal && (
+        <ContactFormCard onClose={() => setShowContactModal(false)} />
+      )}
     </>
   );
 }

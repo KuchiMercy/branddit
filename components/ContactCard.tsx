@@ -40,7 +40,9 @@ export default function ContactCard({
           {/* Buttons */}
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
-              href="tel:+2349020103175"
+              href="https://calendly.com/brandditcreativestudioltd/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex w-full items-center justify-center gap-3 rounded-full bg-[#071C2A] px-10 py-4 font-semibold text-white transition hover:bg-[#0d2b3f] sm:w-auto sm:min-w-[260px]"
             >
               {showButtonIcon && <Phone size={18} />}
@@ -49,7 +51,7 @@ export default function ContactCard({
 
             {showWhatsApp && (
               <Link
-                href="https://wa.me/2349020103175"
+                href="https://wa.me/2349023103175"
                 target="_blank"
                 className="flex w-full items-center justify-center gap-3 rounded-full bg-[#25D366] px-10 py-4 font-semibold text-white transition hover:bg-[#20bf5b] sm:w-auto sm:min-w-[260px]"
               >

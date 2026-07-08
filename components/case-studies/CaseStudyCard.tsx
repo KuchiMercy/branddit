@@ -18,8 +18,14 @@ export default function CaseStudyCard({
 }: Props) {
   return (
     <article className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition duration-300">
-      <div className="relative aspect-4/3">
-        <Image src={image} alt={title} fill className="object-cover" />
+      <div className="relative aspect-4/3 bg-gray-50">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          className="object-contain"
+          quality={100}
+        />
       </div>
 
       <div className="p-6">

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Button from "../ui/Button";
 
@@ -15,10 +16,11 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
-      <nav className="w-full flex justify-center pt-6 md:pt-8">
+      <nav className="fixed top-0 left-0 right-0 z-30 w-full flex justify-center pt-6 md:pt-8">
         <div className="w-[92%] max-w-7xl bg-white/70 backdrop-blur-md rounded-full px-4 md:px-8 py-2 flex items-center justify-between shadow-sm">
           {/* Logo */}
           <Link href="/">
@@ -37,7 +39,11 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-lg font-medium text-slate-800 hover:text-primary transition"
+                className={`text-lg transition ${
+                  pathname === link.href
+                    ? "font-bold text-primary"
+                    : "font-medium text-slate-800 hover:text-primary"
+                }`}
               >
                 {link.name}
               </Link>
@@ -105,7 +111,11 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex justify-between items-center py-6 border-b border-gray-100 text-2xl font-medium text-slate-900"
+                className={`flex justify-between items-center py-6 border-b border-gray-100 text-2xl transition ${
+                  pathname === link.href
+                    ? "font-bold text-primary"
+                    : "font-medium text-slate-900"
+                }`}
               >
                 {link.name}
 

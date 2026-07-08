@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/Button";
@@ -30,16 +32,28 @@ export default function ServicesHero() {
           </p>
 
           <div className="flex flex-col items-center md:items-start md:flex-row justify-center md:justify-start gap-4 mt-10">
-            <Link href="/contact" className="w-full md:w-auto">
+            <button
+              onClick={() => {
+                document
+                  .getElementById("contact-form")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="w-full md:w-auto"
+            >
               <Button
                 text="Start Your Project"
                 bgColor="bg-[#071C2A]"
                 textColor="text-white"
                 className="w-full"
               />
-            </Link>
+            </button>
 
-            <Link href="/contact" className="w-full md:w-auto">
+            <Link
+              href="https://calendly.com/brandditcreativestudioltd/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto"
+            >
               <Button
                 text="Book a Strategy Call"
                 bgColor="bg-transparent"

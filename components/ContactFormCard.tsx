@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Button from "./ui/Button";
-import { Loader2, CheckCircle } from "lucide-react";
+import { Loader2, CheckCircle, X } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -18,7 +18,11 @@ interface FormErrors {
   message?: string;
 }
 
-export default function ContactFormCard() {
+interface ContactFormCardProps {
+  onClose?: () => void;
+}
+
+export default function ContactFormCard({ onClose }: ContactFormCardProps) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -92,10 +96,20 @@ export default function ContactFormCard() {
         : "focus:ring-2 focus:ring-primary/30"
     }`;
 
-  return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-">
-        <div className="bg-[#1747B8] rounded-[36px] p-8 lg:p-14 grid lg:grid-cols-2 gap-16 items-center">
+  const content = (
+    <section className={onClose ? "" : "py-20 bg-white"}>
+      <div className={onClose ? "" : "max-w-7xl mx-auto px-"}>
+        <div
+          className={`bg-[#1747B8] rounded-[36px] p-8 lg:p-14 grid lg:grid-cols-2 gap-16 items-center ${onClose ? "relative" : ""}`}
+        >
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white hover:bg-white/30 transition z-10"
+            >
+              <X size={20} />
+            </button>
+          )}
           {/* Left Side */}
           <div className="text-white max-w-md">
             <h2 className="text-5xl font-bold leading-tight">
@@ -222,4 +236,17 @@ export default function ContactFormCard() {
       </div>
     </section>
   );
+
+  if (onClose) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="absolute inset-0 bg-black/60" onClick={onClose} />
+        <div className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[36px]">
+          {content}
+        </div>
+      </div>
+    );
+  }
+
+  return content;
 }
