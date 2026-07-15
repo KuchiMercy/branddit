@@ -8,7 +8,28 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 
-const socials = [FaInstagram, FaXTwitter, FaFacebook, FaLinkedin, FaTiktok];
+const socials = [
+  {
+    icon: FaInstagram,
+    href: "https://www.instagram.com/brandditcreativestudioltd/?hl=en",
+  },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/company/111143354",
+  },
+  {
+    icon: FaXTwitter,
+    href: "https://x.com/Branddit_withus",
+  },
+  {
+    icon: FaFacebook,
+    href: "https://web.facebook.com/brandditcreativestudioltd/",
+  },
+  {
+    icon: FaTiktok,
+    href: "https://www.tiktok.com/@branddit_creative_studio?is_from_webapp=1&sender_device=pc",
+  },
+];
 
 export default function ContactInfo() {
   return (
@@ -60,13 +81,16 @@ export default function ContactInfo() {
         <h2 className="text-2xl font-semibold mb-5">Social Media</h2>
 
         <div className="flex gap-4">
-          {socials.map((Icon, index) => (
-            <button
+          {socials.map(({ icon: Icon, href }, index) => (
+            <a
               key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-11 h-11 rounded-full bg-gray-100 hover:bg-primary hover:text-white transition flex items-center justify-center"
             >
               <Icon />
-            </button>
+            </a>
           ))}
         </div>
       </div>

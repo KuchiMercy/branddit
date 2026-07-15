@@ -52,25 +52,38 @@ export default function BrandGuide() {
 
     setIsSubmitting(true);
 
-    // Simulate API call delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("https://formspree.io/f/mdaqaoza", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Download PDF
-    downloadPdf();
+      if (!res.ok) throw new Error("Form submission failed");
 
-    setIsSubmitting(false);
-    setDownloadSuccess(true);
-    setFormData({ name: "", email: "" });
+      // Download PDF
+      downloadPdf();
 
-    // Reset success message after 3 seconds
-    setTimeout(() => setDownloadSuccess(false), 3000);
+      setDownloadSuccess(true);
+      setFormData({ name: "", email: "" });
+
+      // Reset success message after 3 seconds
+      setTimeout(() => setDownloadSuccess(false), 3000);
+    } catch {
+      setErrors({ email: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className="bg-[#F7F9FC] py-24 px-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row gap-20 items-center">
         {/* Left Content */}
-        <div>
+        <div className="lg:w-1/2">
           {/* Heading */}
           <h2 className="text-5xl lg:text-6xl font-bold leading-tight text-[#071C2A]">
             Get Your Free <span className="text-primary">Brand Audit</span>{" "}
@@ -169,7 +182,7 @@ export default function BrandGuide() {
         </div>
 
         {/* Right Image */}
-        <div className="relative">
+        <div className="relative lg:w-1/2">
           <div className="relative bg-white rounded-[36px] shadow-xl overflow-hidden p-10">
             <Image
               src="/assets/images/brand-audit.png"
@@ -177,6 +190,7 @@ export default function BrandGuide() {
               width={650}
               height={700}
               className="w-full h-auto object-contain"
+              style={{ width: "100%", height: "auto" }}
               priority
             />
           </div>

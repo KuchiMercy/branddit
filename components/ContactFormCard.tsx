@@ -78,15 +78,28 @@ export default function ContactFormCard({ onClose }: ContactFormCardProps) {
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const res = await fetch("https://formspree.io/f/meeyeqrr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    setFormData({ name: "", email: "", projectType: "", message: "" });
+      if (!res.ok) throw new Error("Form submission failed");
 
-    // Reset success message after 4 seconds
-    setTimeout(() => setIsSuccess(false), 4000);
+      setIsSuccess(true);
+      setFormData({ name: "", email: "", projectType: "", message: "" });
+
+      // Reset success message after 4 seconds
+      setTimeout(() => setIsSuccess(false), 4000);
+    } catch {
+      setErrors({ message: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClasses = (field: keyof FormErrors) =>
@@ -218,6 +231,7 @@ export default function ContactFormCard({ onClose }: ContactFormCardProps) {
                 </div>
 
                 <Button
+                  type="submit"
                   text={isSubmitting ? "Sending..." : "Send Message"}
                   bgColor="bg-primary"
                   textColor="text-white"

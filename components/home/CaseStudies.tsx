@@ -20,24 +20,24 @@ export default function CaseStudies() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-20">
-          {/* Row 1 */}
-          <div className="lg:col-span-2 group overflow-hidden rounded-[28px] bg-white shadow-sm">
+          <div className="lg:col-span-2 h-100 overflow-hidden rounded-[28px]">
             <Image
-              src="/assets/case-studies/lovepops-1.png"
+              src="/assets/case-studies/pops.png"
               alt="LovePops Packaging"
-              width={900}
-              height={600}
-              className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              width={1200}
+              height={500}
+              className="h-full w-full object-fill"
               quality={100}
             />
           </div>
-          <div className="group overflow-hidden rounded-[28px] bg-white shadow-sm">
+
+          <div className="h-100 overflow-hidden rounded-[28px]">
             <Image
-              src="/assets/case-studies/hotel-app.png"
+              src="/assets/case-studies/metro-app.png"
               alt="Hotel Booking UI"
               width={600}
-              height={600}
-              className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              height={500}
+              className="h-full w-full object-cover"
               quality={100}
             />
           </div>
@@ -45,21 +45,23 @@ export default function CaseStudies() {
           {/* Row 2 */}
           <div className="group overflow-hidden rounded-[28px] bg-white shadow-sm">
             <Image
-              src="/assets/case-studies/sistibole.png"
+              src="/assets/case-studies/bole.png"
               alt="Sisti Bole Branding"
               width={600}
               height={600}
               className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              style={{ width: "100%", height: "auto" }}
               quality={100}
             />
           </div>
           <div className="lg:col-span-2 group overflow-hidden rounded-[28px] bg-white shadow-sm">
             <Image
-              src="/assets/case-studies/mobile-ui.png"
+              src="/assets/case-studies/ui.png"
               alt="Mobile App"
               width={900}
               height={600}
               className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              style={{ width: "100%", height: "auto" }}
               quality={100}
             />
           </div>
@@ -67,11 +69,12 @@ export default function CaseStudies() {
           {/* Row 3 */}
           <div className="lg:col-span-3 group overflow-hidden rounded-[28px] bg-white shadow-sm">
             <Image
-              src="/assets/case-studies/northbridge.png"
+              src="/assets/case-studies/bridge-north.png"
               alt="Northbridge Capital"
               width={1200}
               height={600}
               className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              style={{ width: "100%", height: "auto" }}
               quality={100}
             />
           </div>
@@ -79,11 +82,12 @@ export default function CaseStudies() {
           {/* Row 4 */}
           <div className="lg:col-span-3 group overflow-hidden rounded-[28px] bg-white shadow-sm">
             <Image
-              src="/assets/case-studies/social-media.png"
+              src="/assets/case-studies/social-frame.png"
               alt="Social Media Designs"
               width={1200}
               height={600}
               className="w-full h-auto object-contain transition duration-500 group-hover:scale-105"
+              style={{ width: "100%", height: "auto" }}
               quality={100}
             />
           </div>

@@ -25,11 +25,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/">
             <Image
-              src="/assets/branddit-logo.png"
+              src="/assets/logo.png"
               alt="Branddit Logo"
               width={150}
               height={50}
               priority
+              style={{ width: "auto", height: "auto" }}
             />
           </Link>
 
@@ -90,10 +91,11 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex justify-between items-center">
             <Image
-              src="/assets/branddit-logo.png"
+              src="/assets/logo.png"
               alt="Branddit Logo"
               width={160}
               height={50}
+              style={{ width: "auto", height: "auto" }}
             />
 
             <button

@@ -17,7 +17,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "sisibole",
     title: "Sisi Bole Logo and Brand Identity Design",
-    image: "/assets/case-studies/sistibole.png",
+    image: "/assets/case-studies/bole.png",
     category: "Case Study",
     date: "May 4th, 2025",
 
@@ -27,7 +27,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "metrohostels",
     title: "Metrohostels Web Design and Development",
-    image: "/assets/case-studies/hotel-app.png",
+    image: "/assets/case-studies/metro-app.png",
     category: "Case Study",
     date: "February 2nd, 2025",
 
@@ -37,7 +37,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "lovepops",
     title: "Lovepops Premium Popcorn Packaging Design",
-    image: "/assets/case-studies/lovepops-1.png",
+    image: "/assets/case-studies/pops.png",
     category: "Case Study",
     date: "May 7th, 2025",
 
@@ -47,7 +47,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "bodyfinance",
     title: "Body of Finance Visual Identity Design",
-    image: "/assets/case-studies/bof.png",
+    image: "/assets/case-studies/bank.png",
     category: "Case Study",
     date: "February 2nd, 2025",
     overview:
@@ -56,7 +56,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "peanuts",
     title: "Coated Peanuts Label Design",
-    image: "/assets/case-studies/peanuts.png",
+    image: "/assets/case-studies/coated-peanut.png",
     category: "Case Study",
     date: "May 4th, 2025",
     overview:
@@ -74,7 +74,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "northarchitecture",
     title: "North Architecture Web UI Design",
-    image: "/assets/case-studies/northarchitecture.png",
+    image: "/assets/case-studies/north.png",
     category: "Case Study",
     date: "August 11th, 2025",
     overview:
@@ -83,7 +83,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "payroute",
     title: "Payroute Web UI Design",
-    image: "/assets/case-studies/payroute.png",
+    image: "/assets/case-studies/route.png",
     category: "Case Study",
     date: "August 17th, 2025",
     overview:
@@ -92,7 +92,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "mapletrite",
     title: "Mapletrite Refer & Earn Campaign",
-    image: "/assets/case-studies/mapletrite.png",
+    image: "/assets/case-studies/maple.png",
     category: "Case Study",
     date: "March 22nd, 2025",
     overview:
@@ -101,7 +101,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "kch",
     title: "KCH 2025 Content & Marketing Campaign",
-    image: "/assets/case-studies/kch.png",
+    image: "/assets/case-studies/creative.png",
     category: "Case Study",
     date: "March 30th, 2025",
 
@@ -111,7 +111,7 @@ const projects: (CaseStudyDetails & { id: string })[] = [
   {
     id: "northbridge",
     title: "Northbridge Capital Brand Identity",
-    image: "/assets/case-studies/northbridge2.png",
+    image: "/assets/case-studies/bridge.png",
     category: "Case Study",
     date: "August 17th, 2025",
     overview:

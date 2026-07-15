@@ -61,17 +61,13 @@ export default function Header() {
 
           {/* Buttons */}
           <div className="flex flex-col items-center md:flex-row justify-center  gap-4 mt-12">
-            <button
+            <Button
               onClick={() => setShowContactModal(true)}
+              text="Start Your Project →"
+              bgColor="bg-slate-900"
+              textColor="text-white"
               className="w-full md:w-auto"
-            >
-              <Button
-                text="Start Your Project →"
-                bgColor="bg-slate-900"
-                textColor="text-white"
-                className="w-full"
-              />
-            </button>
+            />
 
             <Link href="/case-studies" className="w-full md:w-auto">
               <Button

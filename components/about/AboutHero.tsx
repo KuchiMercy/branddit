@@ -58,11 +58,12 @@ export default function AboutHero() {
         </div>
 
         <Image
-          src="/assets/images/about-hero.png"
+          src="/assets/images/hero-about.png"
           alt="Branddit Team"
           width={650}
           height={700}
           className="rounded-4xl w-full"
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
     </section>

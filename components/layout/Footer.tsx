@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { icons } from "@/public/icons/icons";
 
 const services = [
@@ -23,23 +26,23 @@ const companyLinks = [
 const socialLinks = [
   {
     icon: icons.instagram,
-    href: "#",
+    href: "https://www.instagram.com/brandditcreativestudioltd/?hl=en",
   },
   {
     icon: icons.linkedIn,
-    href: "#",
+    href: "https://www.linkedin.com/company/111143354",
   },
   {
     icon: icons.x,
-    href: "#",
+    href: "https://x.com/Branddit_withus",
   },
   {
     icon: icons.facebook,
-    href: "#",
+    href: "https://web.facebook.com/brandditcreativestudioltd/",
   },
   {
     icon: icons.tiktok,
-    href: "#",
+    href: "https://www.tiktok.com/@branddit_creative_studio?is_from_webapp=1&sender_device=pc",
   },
 ];
 
@@ -50,6 +53,34 @@ const legalLinks = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xvzezobn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSubscribed(true);
+      setEmail("");
+      setTimeout(() => setSubscribed(false), 3000);
+    } catch {
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <footer className="bg-[#071C2A] text-white mt-24">
       <div className="max-w-7xl mx-auto px-6 py-20">
@@ -57,7 +88,7 @@ export default function Footer() {
           {/* Logo */}
           <div>
             <Image
-              src="/assets/branddit-logo-white.png"
+              src="/assets/logo-white.png"
               alt="Branddit Logo"
               width={210}
               height={60}
@@ -132,31 +163,61 @@ export default function Footer() {
             <div className="mt-10">
               <p className="text-sm text-gray-500 mb-3">Newsletter</p>
 
-              <div className="flex overflow-hidden rounded-lg bg-[#10293A]">
+              <form
+                onSubmit={handleNewsletterSubmit}
+                className="flex overflow-hidden rounded-lg bg-[#10293A]"
+              >
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder={subscribed ? "Subscribed!" : "your@email.com"}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 bg-transparent px-4 py-3 text-sm outline-none placeholder:text-gray-500"
                 />
 
-                <button className="bg-[#5879C9] px-5 hover:bg-[#6b88cf] transition">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 12H19M19 12L12 5M19 12L12 19"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-[#5879C9] px-5 hover:bg-[#6b88cf] transition disabled:opacity-70"
+                >
+                  {isSubmitting ? (
+                    <svg
+                      className="animate-spin"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeDasharray="31.4 31.4"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  ) : (
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12H19M19 12L12 5M19 12L12 19"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         </div>

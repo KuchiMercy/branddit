@@ -61,6 +61,7 @@ export default function BrandSlide() {
                 width={120}
                 height={60}
                 className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
           ))}

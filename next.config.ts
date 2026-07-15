@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
         hostname: "drive.google.com",
       },
     ],
+    qualities: [75, 100],
   },
 };
 

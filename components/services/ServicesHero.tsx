@@ -71,6 +71,7 @@ export default function ServicesHero() {
           width={650}
           height={650}
           className="rounded-[30px] w-full"
+          style={{ width: "100%", height: "auto" }}
         />
       </div>
     </section>

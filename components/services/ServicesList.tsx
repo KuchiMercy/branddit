@@ -16,7 +16,6 @@ const services = [
   "Motion graphics & animation",
   "Website design & development",
   "UI/UX design",
-
   "Landing page design",
   "Social media branding & content design",
   "Content creation & copywriting",
@@ -50,7 +49,7 @@ export default function ServicesList() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-20 mt-20">
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-20 mt-20">
           {[left, right].map((column, index) => (
             <div key={index} className="space-y-6">
               {column.map((service) => (
