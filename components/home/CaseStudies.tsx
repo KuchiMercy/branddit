@@ -20,12 +20,22 @@ export default function CaseStudies() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-20">
-          <div className="lg:col-span-2 h-100 overflow-hidden rounded-[28px]">
+          <div className="lg:col-span-1 h-100 overflow-hidden rounded-[28px]">
             <Image
-              src="/assets/case-studies/pops.png"
+              src="/assets/case-studies/Lovepops-1.png"
               alt="LovePops Packaging"
-              width={1200}
-              height={500}
+              width={600}
+              height={400}
+              className="h-full w-full object-fill"
+              quality={100}
+            />
+          </div>
+          <div className="lg:col-span-1 h-100 overflow-hidden rounded-[28px]">
+            <Image
+              src="/assets/case-studies/Lovepops-2.png"
+              alt="LovePops Packaging"
+              width={600}
+              height={400}
               className="h-full w-full object-fill"
               quality={100}
             />
@@ -36,7 +46,7 @@ export default function CaseStudies() {
               src="/assets/case-studies/metro-app.png"
               alt="Hotel Booking UI"
               width={600}
-              height={500}
+              height={400}
               className="h-full w-full object-cover"
               quality={100}
             />

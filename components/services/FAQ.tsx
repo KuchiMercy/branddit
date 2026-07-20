@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "Do you work with early stage startups?",
     answer:
-      "A comprehensive identity project typically spans 8 to 12 weeks, ensuring adequate time for deep discovery, conceptusal exploration, through refinement across all deliverables",
+      "Absolutely. We help early-stage startups build clear, strategic brands that are ready to grow.",
   },
   {
     question: "What kind of documentation will I receive?",
