@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Branddit Creative Studio",
-  description: "Building Brands That Scale",
+  description:
+    "Branddit Creative Studio is a forward thinking branding and creative agency dedicated to helping businesses stand out and grow with confidence. We work with ambitious brands that want more than just design. They want clarity, consistency, and a strong presence in their industry.",
 };
 
 export default function RootLayout({
