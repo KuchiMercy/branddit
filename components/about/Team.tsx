@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <section className="py-24 bg-[#F8FAFC]">
+    <section className="py-8 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
@@ -20,10 +20,10 @@ export default function Team() {
         </div>
 
         {/* body */}
-        <div className="flex flex-col justify-between items-center  md:flex-row">
+        <div className="flex flex-col justify-around items-start mt-6 md:flex-row">
           {/* text */}
           <div className="w-full md:w-1/2">
-            <p className="text-md my-2 text-slate-600 md:text-lg">
+            <p className="text-md my-2 text-slate-600 text-justify md:text-lg">
               Miracle Isenyo Ikwebe is a brand and marketing professional with
               about a decade of experience helping businesses build stronger
               brands, communicate their value, and connect with the right
@@ -59,8 +59,8 @@ export default function Team() {
               src="/assets/images/team/Isenyo.png"
               alt="Miracle Isenyo Ikwebe"
               className="hidden md:block"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             />
             <Image
               src="/assets/images/team/MI.png"

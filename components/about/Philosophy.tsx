@@ -23,7 +23,7 @@ const philosophy = [
 
 export default function Philosophy() {
   return (
-    <section className="py-24 bg-[#F8FAFC]">
+    <section className="py-14 bg-[#F8FAFC]">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-center text-5xl font-bold mb-20">Our Philosophy</h2>
 
