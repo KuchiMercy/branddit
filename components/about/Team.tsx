@@ -6,7 +6,7 @@ export default function Team() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-5xl font-bold text-[#071C2A]">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#071C2A]">
             The Creative Leadership Behind Branddit
           </h2>
 
@@ -23,7 +23,7 @@ export default function Team() {
         <div className="flex flex-col justify-between items-center  md:flex-row">
           {/* text */}
           <div className="w-full md:w-1/2">
-            <p className="text-md my-2 md:text-lg">
+            <p className="text-md my-2 text-slate-600 md:text-lg">
               Miracle Isenyo Ikwebe is a brand and marketing professional with
               about a decade of experience helping businesses build stronger
               brands, communicate their value, and connect with the right
