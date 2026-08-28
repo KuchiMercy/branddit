@@ -2,7 +2,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import AboutHero from "@/components/about/AboutHero";
 import OurStory from "@/components/about/OurStory";
 import Philosophy from "@/components/about/Philosophy";
-import Team from "@/components/about/Team";
+// import Team from "@/components/about/Team";
 import CoreValues from "@/components/about/CoreValues";
 import ContactCard from "@/components/ContactCard";
 
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <AboutHero />
       <OurStory />
       <Philosophy />
-      <Team />
+      {/* <Team /> */}
       <CoreValues />
       <ContactCard
         heading="Ready to build something remarkable?"
